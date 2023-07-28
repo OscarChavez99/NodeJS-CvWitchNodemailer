@@ -1,0 +1,2 @@
+#This folder is unnecessary, because it will be created again by the Express Framework
+node_modules

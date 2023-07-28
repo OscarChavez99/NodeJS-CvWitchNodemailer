@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap and JsResponsive-->
+    <%- include('./partials/head.ejs') %>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/about.css">
+    <title> <%= title %> </title>
+</head>
+<body>
+    <%- include('./partials/navigation.ejs') %>
+    <!--Skills-->
+    <h1 id="skills-title" class="display-1 text-warning d-flex justify-content-center ">My Skills</h1>
+    <div id="skills-container-2">
+        <p id="skills-text" class="display-6 text-dark d-flex justify-content-center">
+            I'm always learning..
+        </p>
+    </div>
+    <div id="skills-container" class="d-flex m-5">
+        <!--Cards-->
+        <div class="d-flex justify-content-center align-items-center h-100"> <!--Cards container-->
+            <div class="row"> <!-- mx-5 -->
+                <%
+                var skill_img = "";
+                for (var i = 0; i<all_skills.length; i++) { 
+                    skill_img = "/img/";
+                    if (all_skills[i] == "C# (.NET framework)") skill_img += "C sharp";
+                    else skill_img += all_skills[i];
+                %>
+                    <div class="card mx-4 mb-3" style="width: 15.5rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"> <%=all_skills[i] %> </h5>
+                            <!--Example: /img/Python.jpg -->
+                            <img src="<%=skill_img+".png"%>" class="card-img-top img-fluid" alt=" <%=all_skills[i] %> "> 
+                            <p class="card-text"></p>
+                            <a href="https://www.google.com/search?q=<%= encodeURIComponent(all_skills[i])%>" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

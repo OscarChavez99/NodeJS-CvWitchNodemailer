@@ -1,0 +1,42 @@
+<!--The current page will be displayed in an opaque manner,
+    while the others will be shown more colorful-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var currentPath = window.location.pathname;
+        // Remove '/' if exists
+        currentPath = currentPath.replace(/^\/|\/$/g, '');
+        // Get all 'nav-link' clases 
+        var navLinks = document.querySelectorAll(".nav-link");
+        // For each navLinks...
+        navLinks.forEach(function (link) {
+            //Get link but without '/'
+            var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, '');
+            if (currentPath === linkPath) {
+                //Remove 'active' to class if it's the current page to look opaque
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Oscar Chavez</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap and JsResponsive-->
+    <%- include('./partials/head.ejs') %>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/contact.css">
+    <title> Contact </title>
+</head>
+<body>
+    <%- include('./partials/navigation.ejs') %>
+
+    <% 
+        if (typeof success !== 'undefined' && success === 'true') {
+    %>
+            <div class="pt-2 text-center">
+                <p class="display-5 text-warning">Email sent successfully!</p>
+            </div>
+    <% } %>
+
+    <div class="vh-50 container pt-2 text-center justify-content-center align-items-center">
+        <form id="contact-form" action="/send-mail" method="post">
+            <!--Mail-->
+            <div class="mb-3">
+                <label class="form-label">Your email address</label>
+                <input type="email" class="form-control" placeholder="name@example.com" id="mail" name="mail">
+            </div>
+            <!--Name-->
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" id="name" name="name">
+            </div>
+            <!--Subject-->
+            <div class="mb-3">
+                <label class="form-label">Subject</label>
+                <input class="form-control" type="text" id="subject" name="subject">
+            </div>
+            <!--Message-->
+            <div class="mb-3">
+                <label class="form-label">Your message here:</label>
+                <textarea class="form-control" rows="3" id="message" name="message"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-warning btn-lg btn-block mb-3 col-3" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
