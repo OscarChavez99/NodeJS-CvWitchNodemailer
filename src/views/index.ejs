@@ -19,23 +19,14 @@
             <img src="/img/oscar.jpg" class="rounded mx-auto d-block" alt="picture" id="oscar-picture">
         </header>
     </div>
+
     <!--Name-->
-    <div id="name-container" class="bg-dark text-center 4">
-        <h1 class="display-1 my-2 text-light fw-bold" id="oscar-title">Óscar Chávez</h1>
+    <div id="name-container" class="text-center">
+        <h1 class="display-4 my-2 fw-bold mx-3" id="oscar-title">Óscar Chávez</h1>
     </div>
-    <!--About me-->
-    <div id="about-me-container" class="vh-50 container pt-2 text-center d-flex justify-content-center align-items-center">
-        <div id="about-me-container-text">
-            <h1 id="about-title" class="display-1 text-warning">About me:</h1>
-            <p id="about-text">
-                I love programming and learning. Luckily I
-                have friends who have been working in
-                the software industry for a long time, they
-                inspire me every day.
-                I like teamwork and helping my partners
-            </p>
-        </div>
-    </div>
+
+    
+
     <!--Skills-->
     <div id="skills-container" class="vh-50 text-center bg-dark">
         <div id="skills-container-2">
@@ -51,7 +42,7 @@
                 <%
                 var skill_img = "";
                 for (var i = 0; i<4; i++) { 
-                    skill_img = "/img/";
+                    skill_img = "/img/skills/";
                     if (four_skills[i] == "C# (.NET framework)") skill_img += "C sharp";
                     else skill_img += four_skills[i];
                 %>
@@ -69,6 +60,20 @@
         </div>
         <div class="container">
             <a href="/skills" type="button" class="btn btn-warning btn-lg btn-block mb-3 col-3">All Skills</a>
+        </div>
+    </div>
+
+    <!--About me-->
+    <div id="about-me-container" class="vh-50 container pt-2 text-center d-flex justify-content-center align-items-center">
+        <div id="about-me-container-text">
+            <h1 id="about-title" class="display-1 text-warning">About me:</h1>
+            <p id="about-text">
+                I love programming and learning. Luckily I
+                have friends who have been working in
+                the software industry for a long time, they
+                inspire me every day.
+                I like teamwork and helping my partners
+            </p>
         </div>
     </div>
 
